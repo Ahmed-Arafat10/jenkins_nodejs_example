@@ -9,9 +9,9 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
 
                 sh """
-                docker build . -f dockerfile -t ahmedaraft10/jenkins_nodejs:latest
+                docker build . -f dockerfile -t ahmedarafat10/jenkins_nodejs:latest
                 docker login -u ${USERNAME}  -p ${PASSWORD}
-                docker push ahmedaraft10/jenkins_nodejs:latest
+                docker push ahmedarafat10/jenkins_nodejs:latest
                 
                 """
 
@@ -26,7 +26,7 @@ pipeline {
 
                 sh """
 
-                docker run -p 3000:3000 ahmedaraft10/jenkins_nodejs:latest
+                docker run -p 3000:3000 ahmedarafat10/jenkins_nodejs:latest
                 
                 """
 
