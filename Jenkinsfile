@@ -7,11 +7,11 @@ pipeline {
                 // Get some code from a GitHub repository
                 // Run Maven on a Unix agent.
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-
+                //docker login -u ${USERNAME}  -p ${PASSWORD}
+                //docker push ahmedarafat10/jenkins_nodejs:latest
                 sh """
                 docker build . -f dockerfile -t ahmedarafat10/jenkins_nodejs:latest
-                docker login -u ${USERNAME}  -p ${PASSWORD}
-                docker push ahmedarafat10/jenkins_nodejs:latest
+              
                 
                 """
 
