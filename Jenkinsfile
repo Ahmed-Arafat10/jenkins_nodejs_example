@@ -26,7 +26,7 @@ pipeline {
 
                 sh """
 
-                docker run -p 3000:3000 ahmedarafat10/jenkins_nodejs:latest
+                docker run -d -p 3000:3000 ahmedarafat10/jenkins_nodejs:latest
                 
                 """
 
